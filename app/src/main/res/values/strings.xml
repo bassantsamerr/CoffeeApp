@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CoffeeShop</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password"> Password </string>
+    <string name="hint_login">Login</string>
+    <string name="hint_register">Dont have an account? Register</string>
+    <string name="hint_forgetPassword">Forget Password?</string>
+</resources>
