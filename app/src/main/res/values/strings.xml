@@ -5,4 +5,7 @@
     <string name="hint_login">Login</string>
     <string name="hint_register">Dont have an account? Register</string>
     <string name="hint_forgetPassword">Forget Password?</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_repeatPassword">Repeat Password</string>
+    <string name="hint_signup">Sign Up</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.coffeeapp
 
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,12 +13,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         Toast.makeText(this,"Welcome",Toast.LENGTH_SHORT).show()
         val btnRegistration = findViewById<Button>(R.id.btn_register)
+        val btnLogin = findViewById<Button>(R.id.btn_login)
         btnRegistration.setOnClickListener{
             startRegistration()
+        }
+        btnLogin.setOnClickListener{
+            startHome()
         }
     }
     fun startRegistration(){
         val intent =Intent(this,registrationActivity::class.java)
+        startActivity(intent)
+    }
+    fun startHome(){
+        val intent =Intent(this,homeActivity::class.java)
         startActivity(intent)
     }
 }
