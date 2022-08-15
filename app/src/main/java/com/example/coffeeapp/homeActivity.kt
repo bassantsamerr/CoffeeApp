@@ -13,7 +13,7 @@ data class drink(val Name:String,val Price:Double,val imageView: ImageView)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         val listView=findViewById<ListView>(R.id.listview)
-        val drinks = arrayOf("Espresso","Cappuccino","Macciato","Mocha","Latte")
+        val drinks = arrayOf("Espresso","Cappuccino","Macchiato","Mocha","Latte")
         val arrayAdapter:ArrayAdapter<String> = ArrayAdapter(this,android.R.layout.simple_list_item_1,drinks)
         listView.adapter=arrayAdapter
         listView.setOnItemClickListener { adapterView, view, i, l ->
