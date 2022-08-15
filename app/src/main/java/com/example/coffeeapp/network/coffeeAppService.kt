@@ -11,7 +11,7 @@ import retrofit2.http.POST
 
 interface coffeeAppSerice {
     @POST ("api/register")
-    fun register(@Body user: User): Call<RegisterResponse>
+    fun signup(@Body user: User): Call<RegisterResponse>
 }
 var service = Retrofit.Builder().baseUrl("https://reqres.in/").
 addConverterFactory(GsonConverterFactory.create()).build()
