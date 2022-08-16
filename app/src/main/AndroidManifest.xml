@@ -16,6 +16,9 @@
         android:theme="@style/Theme.CoffeeApp"
         tools:targetApi="31">
         <activity
+            android:name=".choicesActivity"
+            android:exported="false" />
+        <activity
             android:name=".preferenceActivity"
             android:exported="false" />
         <activity

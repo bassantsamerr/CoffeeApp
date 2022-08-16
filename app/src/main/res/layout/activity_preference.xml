@@ -57,16 +57,16 @@ tools:context=".preferenceActivity">
 
             <ImageButton
                 android:id="@+id/addquantity"
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="33dp"
                 android:layout_marginLeft="275dp"
                 android:background="@drawable/add" />
 
             <ImageButton
                 android:id="@+id/subquantity"
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="34dp"
-                android:layout_marginLeft="350dp"
+                android:layout_marginLeft="337dp"
                 android:background="@drawable/minus" />
 
             <TextView
@@ -88,11 +88,23 @@ tools:context=".preferenceActivity">
 
                 android:layout_marginTop="1dp"
                 android:layout_marginRight="300dp"
-                android:text="30 EGP"
+                android:text="0"
                 android:textColor="@color/purple_200"
                 android:textSize="16dp"
                 android:textStyle="bold" />
+`            <TextView
+            android:id="@+id/currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/drinkNameinInfo"
+            android:layout_alignParentRight="true"
 
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="270dp"
+            android:text="L.E"
+            android:textColor="@color/purple_200"
+            android:textSize="16dp"
+            android:textStyle="bold" />
             <TextView
                 android:id="@+id/drinkNameinInfo"
                 android:layout_width="wrap_content"
@@ -239,21 +251,35 @@ tools:context=".preferenceActivity">
                 android:textColor="@color/purple_500"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/total"
                 android:layout_width="wrap_content"
-                android:layout_height="38dp"
-                android:layout_marginLeft="312.5dp"
-                android:layout_marginTop="7dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="275dp"
+                android:layout_marginTop="0dp"
                 android:text="0"
-                android:textColor="@color/purple_500"
-                android:textSize="30dp"
+                android:textColor="@color/purple_200"
+                android:textSize="32dp"
                 android:textStyle="bold" />
+            <TextView
+                android:id="@+id/currencyTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:text="L.E"
+                android:textColor="@color/purple_200"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
             <Button
                 android:id="@+id/btn_addToCart"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_width="283dp"
+                android:layout_height="37dp"
+                android:layout_marginLeft="60dp"
                 android:layout_marginTop="45dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="10dp"
