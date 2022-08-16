@@ -76,56 +76,56 @@ class preferenceActivity : AppCompatActivity() {
             }
         })
 
-        mediumcup?.setOnClickListener({
+        mediumcup?.setOnClickListener {
             mediumcup?.setBackgroundResource(R.drawable.coffeecupselected)
             smallcup?.setBackgroundResource(R.drawable.coffeecup)
             largecup?.setBackgroundResource(R.drawable.coffeecup)
             coffeePrice?.setText("40")
-        })
-        largecup?.setOnClickListener({
+        }
+        largecup?.setOnClickListener {
             largecup?.setBackgroundResource(R.drawable.coffeecupselected)
             smallcup?.setBackgroundResource(R.drawable.coffeecup)
             mediumcup?.setBackgroundResource(R.drawable.coffeecup)
             coffeePrice?.setText("50")
-        })
-        smallcup?.setOnClickListener({
+        }
+        smallcup?.setOnClickListener {
             smallcup?.setBackgroundResource(R.drawable.coffeecupselected)
             mediumcup?.setBackgroundResource(R.drawable.coffeecup)
             largecup?.setBackgroundResource(R.drawable.coffeecup)
             coffeePrice?.setText("30")
-        })
+        }
 
-        zerosugarcube?.setOnClickListener({
+        zerosugarcube?.setOnClickListener {
             zerosugarcube?.setBackgroundResource(R.drawable.zerosugarcubeselected)
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcube)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubes)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubes)
 
-        })
+        }
 
-        onesugarcube?.setOnClickListener({
+        onesugarcube?.setOnClickListener {
             zerosugarcube?.setBackgroundResource(R.drawable.zerosugarcube)
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcubeselected)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubes)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubes)
 
-        })
+        }
 
-        twosugarcube?.setOnClickListener({
+        twosugarcube?.setOnClickListener {
             zerosugarcube?.setBackgroundResource(R.drawable.zerosugarcube)
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcube)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubeselected)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubes)
 
-        })
+        }
 
-        threesugarcube?.setOnClickListener({
+        threesugarcube?.setOnClickListener {
             zerosugarcube?.setBackgroundResource(R.drawable.zerosugarcube)
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcube)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubes)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubeselected)
 
-        })
+        }
 
         val btnAddToCard = findViewById<Button>(R.id.btn_addToCart)
         btnAddToCard.setOnClickListener{
