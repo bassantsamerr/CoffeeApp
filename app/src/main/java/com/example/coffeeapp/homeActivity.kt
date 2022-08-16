@@ -1,5 +1,6 @@
 package com.example.coffeeapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ImageView
@@ -18,7 +19,12 @@ data class drink(val Name:String,val Price:Double,val imageView: ImageView)
         listView.adapter=arrayAdapter
         listView.setOnItemClickListener { adapterView, view, i, l ->
             Toast.makeText(this,"Item Selected " +drinks[i],Toast.LENGTH_LONG).show()
+            startPreference()
         }
 
 }
+    fun startPreference(){
+        val intent = Intent(this,preferenceActivity::class.java)
+        startActivity(intent)
+    }
 }

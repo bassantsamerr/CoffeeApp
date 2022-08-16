@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="10dp"
+tools:context=".preferenceActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/firstCardView"
+        android:layout_width="358dp"
+        android:layout_height="190dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <ImageView
+            android:layout_width="359dp"
+            android:layout_height="203dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/background" />
+
+        <RelativeLayout
+            android:layout_width="357dp"
+            android:layout_height="198dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/imageViewInfo"
+                android:layout_width="match_parent"
+                android:layout_height="185dp"
+                android:src="@drawable/latte" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/secondCardView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/firstCardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="267dp"
+            android:layout_marginTop="10dp">
+
+
+            <ImageButton
+                android:id="@+id/addquantity"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:layout_marginLeft="275dp"
+                android:background="@drawable/add" />
+
+            <ImageButton
+                android:id="@+id/subquantity"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginLeft="350dp"
+                android:background="@drawable/minus" />
+
+            <TextView
+                android:id="@+id/quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginLeft="312.5dp"
+                android:text="0"
+                android:textColor="@color/purple_500"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/coffeePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/drinkNameinInfo"
+                android:layout_alignParentRight="true"
+
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="300dp"
+                android:text="30 EGP"
+                android:textColor="@color/purple_200"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/drinkNameinInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Drink Name"
+                android:textColor="@color/purple_500"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/thirdcardview"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/firstCardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="105dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="267dp"
+            android:layout_marginTop="10dp">
+
+            <ImageButton
+                android:id="@+id/small_cup"
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="250dp"
+                android:background="@drawable/coffeecup" />
+            <ImageButton
+                android:id="@+id/medium_cup"
+                android:layout_width="35dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="285dp"
+                android:background="@drawable/coffeecup" />
+            <ImageButton
+                android:id="@+id/large_cup"
+                android:layout_width="40dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="330dp"
+                android:background="@drawable/coffeecup" />
+            <TextView
+                android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="42dp"
+                android:text="Size"
+                android:textColor="@color/purple_200"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fourthcardview"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/firstCardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="190dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="267dp"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/sugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="42dp"
+                android:text="Sugar"
+                android:textColor="@color/purple_200"
+                android:textSize="24dp"
+                android:textStyle="bold"/>
+
+            <ImageButton
+                android:id="@+id/zerosugarcube"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="200dp"
+                android:background="@drawable/zerosugarcube" />
+
+            <ImageButton
+                android:id="@+id/onesugarcube"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="250dp"
+                android:background="@drawable/onesugarcube" />
+            <ImageButton
+                android:id="@+id/twosugarcube"
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="300dp"
+                android:background="@drawable/twosugarcubes" />
+            <ImageButton
+                android:id="@+id/threesugarcube"
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="350dp"
+                android:background="@drawable/threesugarcubes" />
+
+
+
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fifthcardview"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_below="@+id/firstCardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="275dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="267dp"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/totalTV"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text=" Total: "
+                android:textColor="@color/purple_500"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginLeft="312.5dp"
+                android:layout_marginTop="7dp"
+                android:text="0"
+                android:textColor="@color/purple_500"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btn_addToCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:text="Add to cart"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
