@@ -129,11 +129,11 @@ class preferenceActivity : AppCompatActivity() {
 
         val btnAddToCard = findViewById<Button>(R.id.btn_addToCart)
         btnAddToCard.setOnClickListener{
-            startHome()
+            startChoices()
         }
     }
-    fun startHome(){
-        val intent =Intent(this,homeActivity::class.java)
+    fun startChoices(){
+        val intent =Intent(this,choicesActivity::class.java)
         startActivity(intent)
     }
     private fun displayQuantity() {

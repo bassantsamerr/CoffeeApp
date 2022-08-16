@@ -9,4 +9,7 @@
     <string name="hint_repeatPassword">Repeat Password</string>
     <string name="hint_signup">Sign Up</string>
     <string name="latte">Hot latte</string>
+    <string name="hint_yourprofile">Your Profile</string>
+    <string name="hint_viewCard">View Card</string>
+    <string name="hint_Menu">Menu</string>
 </resources>

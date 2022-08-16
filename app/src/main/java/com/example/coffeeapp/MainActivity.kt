@@ -18,15 +18,15 @@ class MainActivity : AppCompatActivity() {
             startRegistration()
         }
         btnLogin.setOnClickListener{
-            startHome()
+            startChoices()
         }
     }
     fun startRegistration(){
         val intent =Intent(this,registrationActivity::class.java)
         startActivity(intent)
     }
-    fun startHome(){
-        val intent =Intent(this,homeActivity::class.java)
+    fun startChoices(){
+        val intent =Intent(this,choicesActivity::class.java)
         startActivity(intent)
     }
 }
