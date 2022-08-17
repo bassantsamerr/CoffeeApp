@@ -18,7 +18,7 @@ interface coffeeAppSerice {
     @POST ("/user/v1/login")
     fun login(@Body user: User): Call<LoginResponse>
     @GET ("/products/getAllProducts/")
-    fun getAllProducts(@Header("Authorization") auth:String):Call<List<Drink>>
+    fun getAllProducts(@Header("Authorization") auth:String):Call<ArrayList<Drink>>
 }
 
 val logging = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);

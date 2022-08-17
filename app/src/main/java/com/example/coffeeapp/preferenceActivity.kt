@@ -34,7 +34,8 @@ class preferenceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preference)
-
+        val id=intent.extras?.getInt("id")
+        val drink=SharedList.drinks?.find { it.id==id }
         imageView = findViewById(R.id.imageViewInfo)
         plusquantity = findViewById(R.id.addquantity)
         minusquantity  = findViewById(R.id.subquantity)
@@ -51,22 +52,23 @@ class preferenceActivity : AppCompatActivity() {
         twosugarcube=findViewById(R.id.twosugarcube)
         threesugarcube=findViewById(R.id.threesugarcube)
 
-
+        drinkName?.text=drink?.name
+        coffeePrice?.text= drink?.price.toString()
         Log.v("1", "before button add")
         plusquantity?.setOnClickListener {
             Log.v("2", "inside button add")
                 // coffee price
-                var basePrice = coffeePrice?.text.toString().toInt()
+                var basePrice = drink?.price
                 quantity++
                 displayQuantity()
-                val Total = basePrice + total?.text.toString().toInt()
+                val Total = basePrice?.plus(total?.text.toString().toDouble())
                 val setnewPrice = Total.toString()
                 total?.setText(setnewPrice)
 
         }
 
         minusquantity?.setOnClickListener(View.OnClickListener {
-            val basePrice = coffeePrice?.text.toString().toInt()
+            val basePrice = drink?.price
             // because we dont want the quantity go less than 0
             if (quantity == 0) {
                 Toast.makeText(this, "Cant decrease quantity < 0", Toast.LENGTH_SHORT)
@@ -77,7 +79,7 @@ class preferenceActivity : AppCompatActivity() {
                 if(total?.text.toString().toInt()==0){Toast.makeText(this, "Cant decrease quantity < 0", Toast.LENGTH_SHORT)
                     .show()}
                 else {
-                    val coffePrice = total?.text.toString().toInt() - basePrice
+                    val coffePrice = total?.text.toString().toDouble() - basePrice!!
                     val setnewPrice = coffePrice.toString()
                     total?.setText(setnewPrice)
                 }
@@ -88,21 +90,21 @@ class preferenceActivity : AppCompatActivity() {
             mediumcup?.setBackgroundResource(R.drawable.coffeecupselected)
             smallcup?.setBackgroundResource(R.drawable.coffeecup)
             largecup?.setBackgroundResource(R.drawable.coffeecup)
-            coffeePrice?.setText("40")
+            coffeePrice?.setText((drink?.price!!+10.0).toString())
             size=1
         }
         largecup?.setOnClickListener {
             largecup?.setBackgroundResource(R.drawable.coffeecupselected)
             smallcup?.setBackgroundResource(R.drawable.coffeecup)
             mediumcup?.setBackgroundResource(R.drawable.coffeecup)
-            coffeePrice?.setText("50")
+            coffeePrice?.setText((drink?.price!!+15.0).toString())
             size=2
         }
         smallcup?.setOnClickListener {
             smallcup?.setBackgroundResource(R.drawable.coffeecupselected)
             mediumcup?.setBackgroundResource(R.drawable.coffeecup)
             largecup?.setBackgroundResource(R.drawable.coffeecup)
-            coffeePrice?.setText("30")
+            coffeePrice?.setText((drink?.price!!).toString())
             size=0
         }
 
@@ -141,13 +143,12 @@ class preferenceActivity : AppCompatActivity() {
         }
 
         val btnAddToCard = findViewById<Button>(R.id.btn_addToCart)
-//        btnAddToCard.setOnClickListener{
-//            val drink=Drink()
-//            SharedList.add(drink)
-//            Log.d("@@@",SharedList.getAllItems().toString())
-//            Toast.makeText(this,"Successfully Items added in Cart",Toast.LENGTH_SHORT).show()
-//            startChoices()
-//        }
+        btnAddToCard.setOnClickListener{
+            SharedList.add(drink!!)
+            Log.d("@@@",SharedList.getAllItems().toString())
+            Toast.makeText(this,"Successfully Items added in Cart",Toast.LENGTH_SHORT).show()
+            startChoices()
+        }
 
     }
     fun startChoices(){
