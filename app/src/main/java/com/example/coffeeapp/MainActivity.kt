@@ -42,9 +42,7 @@ class MainActivity : AppCompatActivity() {
                 val user = User("",email, password)
                 service.login(user)
                     .enqueue(object : Callback<LoginResponse> {
-                        override fun onResponse(
-                            call: Call<LoginResponse>,
-                            response: Response<LoginResponse>
+                        override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>
                         ) {
                             if (response.isSuccessful) {
                                 Log.v("3", "onResponse ${response.body().toString()}")

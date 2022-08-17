@@ -229,7 +229,7 @@ tools:context=".preferenceActivity">
     <androidx.cardview.widget.CardView
         android:id="@+id/fifthcardview"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="112dp"
         android:layout_below="@+id/firstCardView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="275dp"
@@ -280,7 +280,7 @@ tools:context=".preferenceActivity">
                 android:layout_width="283dp"
                 android:layout_height="37dp"
                 android:layout_marginLeft="60dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="10dp"
                 android:text="Add to cart"

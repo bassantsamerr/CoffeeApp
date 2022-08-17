@@ -46,7 +46,6 @@ class ListAdapter(var drinks:ArrayList<Drink>?): RecyclerView.Adapter<ListAdapte
         holder.itemView.setOnClickListener{
             val bundle=Bundle()
             bundle.putInt("id", drink?.id!!)
-
             val intent = Intent(it.context, preferenceActivity::class.java)
             intent.putExtras(bundle)
             it.context.startActivity(intent)

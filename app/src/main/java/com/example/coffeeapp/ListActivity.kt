@@ -37,7 +37,6 @@ class ListActivity : AppCompatActivity() {
                     val adapter=ListAdapter(arr)
                     rv.adapter=adapter
                     Log.v("3", "onResponse ${response.body().toString()}")
-                    //arr.addAll(listOf(response.body()?.get(0)))
                     adapter.drinks=response.body()
                     adapter.notifyDataSetChanged()
                     SharedList.drinks=response.body()

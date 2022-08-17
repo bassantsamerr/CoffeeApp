@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.coffeeapp.dataClasses.BoughtItems
 import com.example.coffeeapp.dataClasses.Drink
 import com.example.coffeeapp.dataClasses.SharedList
 
@@ -54,6 +55,7 @@ class preferenceActivity : AppCompatActivity() {
 
         drinkName?.text=drink?.name
         coffeePrice?.text= drink?.price.toString()
+
         Log.v("1", "before button add")
         plusquantity?.setOnClickListener {
             Log.v("2", "inside button add")
@@ -91,21 +93,21 @@ class preferenceActivity : AppCompatActivity() {
             smallcup?.setBackgroundResource(R.drawable.coffeecup)
             largecup?.setBackgroundResource(R.drawable.coffeecup)
             coffeePrice?.setText((drink?.price!!+10.0).toString())
-            size=1
+            drink?.size=1
         }
         largecup?.setOnClickListener {
             largecup?.setBackgroundResource(R.drawable.coffeecupselected)
             smallcup?.setBackgroundResource(R.drawable.coffeecup)
             mediumcup?.setBackgroundResource(R.drawable.coffeecup)
             coffeePrice?.setText((drink?.price!!+15.0).toString())
-            size=2
+            drink?.size=2
         }
         smallcup?.setOnClickListener {
             smallcup?.setBackgroundResource(R.drawable.coffeecupselected)
             mediumcup?.setBackgroundResource(R.drawable.coffeecup)
             largecup?.setBackgroundResource(R.drawable.coffeecup)
             coffeePrice?.setText((drink?.price!!).toString())
-            size=0
+            drink?.size=0
         }
 
         zerosugarcube?.setOnClickListener {
@@ -113,7 +115,7 @@ class preferenceActivity : AppCompatActivity() {
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcube)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubes)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubes)
-            sugar=0
+            drink?.sugar=0
 
         }
 
@@ -122,7 +124,7 @@ class preferenceActivity : AppCompatActivity() {
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcubeselected)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubes)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubes)
-            sugar=1
+            drink?.sugar=1
         }
 
         twosugarcube?.setOnClickListener {
@@ -130,7 +132,7 @@ class preferenceActivity : AppCompatActivity() {
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcube)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubeselected)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubes)
-            sugar=2
+            drink?.sugar=2
 
         }
 
@@ -139,14 +141,16 @@ class preferenceActivity : AppCompatActivity() {
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcube)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubes)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubeselected)
-            sugar=3
+            drink?.sugar=3
         }
 
         val btnAddToCard = findViewById<Button>(R.id.btn_addToCart)
         btnAddToCard.setOnClickListener{
-            SharedList.add(drink!!)
+            BoughtItems.add(drink!!)
             Log.d("@@@",SharedList.getAllItems().toString())
             Toast.makeText(this,"Successfully Items added in Cart",Toast.LENGTH_SHORT).show()
+            drink?.bought_items_count= quantity
+            drink?.is_added_to_cart=true
             startChoices()
         }
 

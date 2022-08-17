@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.coffeeapp.dataClasses.Drink
 
-class drinksAdapter(private val drinks:ArrayList<Drink>): RecyclerView.Adapter<drinksAdapter.drinkViewHolder>(){
-    class drinkViewHolder(view: View): RecyclerView.ViewHolder(view){
+class viewCartAdapter(private val drinks:ArrayList<Drink>): RecyclerView.Adapter<viewCartAdapter.viewCartViewHolder>(){
+    class viewCartViewHolder(view: View): RecyclerView.ViewHolder(view){
         val tvDrink:TextView
         val ivPhoto:ImageView
         init{
@@ -20,7 +20,7 @@ class drinksAdapter(private val drinks:ArrayList<Drink>): RecyclerView.Adapter<d
         }
     }
 
-    override fun onBindViewHolder(holder: drinkViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: viewCartViewHolder, position: Int) {
         val drink=drinks[position]
         holder.tvDrink.text=drink.name
         Glide.with(holder.itemView)
@@ -30,10 +30,10 @@ class drinksAdapter(private val drinks:ArrayList<Drink>): RecyclerView.Adapter<d
 
     override fun getItemCount(): Int =drinks.size
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): drinkViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewCartViewHolder {
         val inflater=LayoutInflater.from(parent.context)
         val view=inflater.inflate(R.layout.item_drink,parent,false)
-        return drinkViewHolder(view)
+        return viewCartViewHolder(view)
 
     }
 
