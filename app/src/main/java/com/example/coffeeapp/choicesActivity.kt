@@ -27,11 +27,11 @@ class choicesActivity : AppCompatActivity() {
         startActivity(intent)
     }
     fun startMenu(){
-        val intent =Intent(this,homeActivity::class.java)
+        val intent =Intent(this,ListActivity::class.java)
         startActivity(intent)
     }
     fun startViewCard(){
-        val intent =Intent(this,viewCardActivity::class.java)
+        val intent =Intent(this,viewCartActivity::class.java)
         startActivity(intent)
     }
 

@@ -43,10 +43,10 @@ class registrationActivity : AppCompatActivity() {
             }else if(password != repeatedPass){
                 Toast.makeText(this,"password field is not equal to repeated password field", Toast.LENGTH_SHORT).show()
             }else{
-                val user = User(email, password)
+                val user = User(username, password,email)
                 service.signup(user)
-                    .enqueue(object : Callback<RegisterResponse> {
-                        override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
+                    .enqueue(object : Callback<Unit> {
+                        override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                             if (response.isSuccessful) {
                                 //Toast.makeText(this@RegisterActivity,"please fill all required fields", Toast.LENGTH_SHORT).show()
 
@@ -58,10 +58,11 @@ class registrationActivity : AppCompatActivity() {
                             }
                         }
 
-                        override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+                        override fun onFailure(call: Call<Unit>, t: Throwable) {
                             Log.v("5", "onFailure ${t.localizedMessage} ")
                         }
                     })}}
+
 
 
 

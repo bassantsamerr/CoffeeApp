@@ -6,6 +6,9 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.coffeeapp.dataClasses.Drink
+import com.example.coffeeapp.dataClasses.SharedList
+
 var total:TextView? = null
 var quantity = 0
 class preferenceActivity : AppCompatActivity() {
@@ -24,6 +27,8 @@ class preferenceActivity : AppCompatActivity() {
     var onesugarcube:ImageButton?=null
     var twosugarcube:ImageButton?=null
     var threesugarcube:ImageButton?=null
+    var size:Int=0
+    var sugar:Int=0
     //var quantity = 0
     var hasAllRequiredValues = false
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,10 +74,13 @@ class preferenceActivity : AppCompatActivity() {
             } else {
                 quantity--
                 displayQuantity()
-                val coffePrice =total?.text.toString().toInt()- basePrice
-                val setnewPrice = coffePrice.toString()
-                total?.setText(setnewPrice)
-
+                if(total?.text.toString().toInt()==0){Toast.makeText(this, "Cant decrease quantity < 0", Toast.LENGTH_SHORT)
+                    .show()}
+                else {
+                    val coffePrice = total?.text.toString().toInt() - basePrice
+                    val setnewPrice = coffePrice.toString()
+                    total?.setText(setnewPrice)
+                }
             }
         })
 
@@ -81,18 +89,21 @@ class preferenceActivity : AppCompatActivity() {
             smallcup?.setBackgroundResource(R.drawable.coffeecup)
             largecup?.setBackgroundResource(R.drawable.coffeecup)
             coffeePrice?.setText("40")
+            size=1
         }
         largecup?.setOnClickListener {
             largecup?.setBackgroundResource(R.drawable.coffeecupselected)
             smallcup?.setBackgroundResource(R.drawable.coffeecup)
             mediumcup?.setBackgroundResource(R.drawable.coffeecup)
             coffeePrice?.setText("50")
+            size=2
         }
         smallcup?.setOnClickListener {
             smallcup?.setBackgroundResource(R.drawable.coffeecupselected)
             mediumcup?.setBackgroundResource(R.drawable.coffeecup)
             largecup?.setBackgroundResource(R.drawable.coffeecup)
             coffeePrice?.setText("30")
+            size=0
         }
 
         zerosugarcube?.setOnClickListener {
@@ -100,6 +111,7 @@ class preferenceActivity : AppCompatActivity() {
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcube)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubes)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubes)
+            sugar=0
 
         }
 
@@ -108,7 +120,7 @@ class preferenceActivity : AppCompatActivity() {
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcubeselected)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubes)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubes)
-
+            sugar=1
         }
 
         twosugarcube?.setOnClickListener {
@@ -116,6 +128,7 @@ class preferenceActivity : AppCompatActivity() {
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcube)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubeselected)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubes)
+            sugar=2
 
         }
 
@@ -124,13 +137,18 @@ class preferenceActivity : AppCompatActivity() {
             onesugarcube?.setBackgroundResource(R.drawable.onesugarcube)
             twosugarcube?.setBackgroundResource(R.drawable.twosugarcubes)
             threesugarcube?.setBackgroundResource(R.drawable.threesugarcubeselected)
-
+            sugar=3
         }
 
         val btnAddToCard = findViewById<Button>(R.id.btn_addToCart)
-        btnAddToCard.setOnClickListener{
-            startChoices()
-        }
+//        btnAddToCard.setOnClickListener{
+//            val drink=Drink()
+//            SharedList.add(drink)
+//            Log.d("@@@",SharedList.getAllItems().toString())
+//            Toast.makeText(this,"Successfully Items added in Cart",Toast.LENGTH_SHORT).show()
+//            startChoices()
+//        }
+
     }
     fun startChoices(){
         val intent =Intent(this,choicesActivity::class.java)
