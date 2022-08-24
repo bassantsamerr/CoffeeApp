@@ -1,7 +1,9 @@
 package com.example.coffeeapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coffeeapp.dataClasses.BoughtItems
@@ -22,5 +24,23 @@ class viewCartActivity : AppCompatActivity() {
         val rvDrinks:RecyclerView=findViewById(R.id.rv_drinks)
         rvDrinks.layoutManager= layoutManager
         rvDrinks.adapter=adapter
+//        val btnMenu = findViewById<Button>(R.id.btn_menu)
+//        btnMenu.setOnClickListener{
+//            startChoices()
+//        }
     }
+//    fun startChoices() {
+////        val layoutManager=LinearLayoutManager(this)
+////        val intent = Intent(this, choicesActivity::class.java)
+////        val adapter= BoughtItems.delete()?.let { viewCartAdapter(it) }
+////        val rvDrinks:RecyclerView=findViewById(R.id.rv_drinks)
+////        rvDrinks.layoutManager= layoutManager
+////        rvDrinks.adapter=adapter
+//        val intent = Intent(this, choicesActivity::class.java)
+//        startActivity(intent)
+//    }
+//    fun startChoices(){
+//        val intent =Intent(this,choicesActivity::class.java)
+//        startActivity(intent)
+//    }
 }

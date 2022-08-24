@@ -60,12 +60,14 @@
         android:layout_height="35dp"
         android:gravity="right"
         android:hint="@string/hint_forgetPassword"
+
         android:textSize="12sp" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/roundedbutton"
         android:text="@string/hint_login" />
 
     <Button

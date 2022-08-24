@@ -12,4 +12,5 @@
     <string name="hint_yourprofile">Your Profile</string>
     <string name="hint_viewCard">View Card</string>
     <string name="hint_Menu">Menu</string>
+    <string name="hint_logout">Logout</string>
 </resources>

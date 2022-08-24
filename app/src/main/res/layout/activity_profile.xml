@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".profileActivity">
 
+    <TextView
+        android:id="@+id/tv_username_profile"
+        android:layout_width="216dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_username_email"
+        android:layout_width="319dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username_profile" />
 </androidx.constraintlayout.widget.ConstraintLayout>

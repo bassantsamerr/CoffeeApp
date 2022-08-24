@@ -33,6 +33,11 @@ object BoughtItems{
     fun add(drink: Drink){
         drinks?.add(drink)
     }
+    fun delete(){
+       for (i in 1..drinks!!.size-1) {
+            drinks?.removeAt(i)
+        }
+    }
     fun getAllItems():ArrayList<Drink>?
     {
         return drinks

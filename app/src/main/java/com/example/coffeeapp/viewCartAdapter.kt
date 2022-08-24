@@ -14,15 +14,22 @@ class viewCartAdapter(private val drinks:ArrayList<Drink>): RecyclerView.Adapter
     class viewCartViewHolder(view: View): RecyclerView.ViewHolder(view){
         val tvDrink:TextView
         val ivPhoto:ImageView
+        val quantity:TextView
+        val price:TextView
+
         init{
-            tvDrink=view.findViewById(R.id.tv_drink)
+            tvDrink=view.findViewById(R.id.tv_drink_name)
             ivPhoto=view.findViewById(R.id.iv_photo)
+            quantity=view.findViewById(R.id.tv_quantity)
+            price=view.findViewById(R.id.tv_price)
         }
     }
 
     override fun onBindViewHolder(holder: viewCartViewHolder, position: Int) {
         val drink=drinks[position]
         holder.tvDrink.text=drink.name
+        holder.price.text=(drink.price*drink.bought_items_count).toString()
+        holder.quantity.text= "x${drink.bought_items_count.toString()}"
         Glide.with(holder.itemView)
             .load(drink.imageURL)
             .into(holder.ivPhoto)
@@ -32,7 +39,7 @@ class viewCartAdapter(private val drinks:ArrayList<Drink>): RecyclerView.Adapter
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewCartViewHolder {
         val inflater=LayoutInflater.from(parent.context)
-        val view=inflater.inflate(R.layout.item_drink,parent,false)
+        val view=inflater.inflate(R.layout.item_drink_bought,parent,false)
         return viewCartViewHolder(view)
 
     }

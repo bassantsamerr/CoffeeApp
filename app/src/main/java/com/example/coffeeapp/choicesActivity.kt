@@ -21,6 +21,10 @@ class choicesActivity : AppCompatActivity() {
         btnViewCard.setOnClickListener{
             startViewCard()
         }
+        val btnLogout = findViewById<Button>(R.id.btn_logout)
+        btnLogout.setOnClickListener{
+            startLogout()
+        }
     }
     fun startProfile(){
         val intent = Intent(this,profileActivity::class.java)
@@ -32,6 +36,10 @@ class choicesActivity : AppCompatActivity() {
     }
     fun startViewCard(){
         val intent =Intent(this,viewCartActivity::class.java)
+        startActivity(intent)
+    }
+    fun startLogout(){
+        val intent =Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
 

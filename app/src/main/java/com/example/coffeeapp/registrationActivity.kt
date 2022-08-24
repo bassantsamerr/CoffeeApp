@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.coffeeapp.dataClasses.RegisterResponse
 import com.example.coffeeapp.dataClasses.User
 import com.example.coffeeapp.network.service
 import retrofit2.Call
@@ -45,23 +44,25 @@ class registrationActivity : AppCompatActivity() {
             }else{
                 val user = User(username, password,email)
                 service.signup(user)
-                    .enqueue(object : Callback<Unit> {
-                        override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                            if (response.isSuccessful) {
-                                //Toast.makeText(this@RegisterActivity,"please fill all required fields", Toast.LENGTH_SHORT).show()
-
-                                Log.v("3", "onResponse ${response.body().toString()}")
-                                startSignUp()
-
-                            } else {
-                                Log.v("4", "onResponse ${response.code()}")
-                            }
-                        }
-
-                        override fun onFailure(call: Call<Unit>, t: Throwable) {
-                            Log.v("5", "onFailure ${t.localizedMessage} ")
-                        }
-                    })}}
+//                    .enqueue(object : Callback<Unit> {
+//                        override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+//                            if (response.isSuccessful) {
+//                                //Toast.makeText(this@RegisterActivity,"please fill all required fields", Toast.LENGTH_SHORT).show()
+//
+//                                Log.v("3", "onResponse ${response.body().toString()}")
+//                                startSignUp()
+//
+//                            } else {
+//                                Log.v("4", "onResponse ${response.code()}")
+//                            }
+//                        }
+//
+//                        override fun onFailure(call: Call<Unit>, t: Throwable) {
+//                            Log.v("5", "onFailure ${t.localizedMessage} ")
+//                        }
+//                    })
+                startSignUp()
+                                }}
 
 
 

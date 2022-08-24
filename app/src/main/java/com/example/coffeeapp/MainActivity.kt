@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             Log.v("2", "inside button login")
             val email = etEmail?.text.toString()
             val password = etPassword?.text.toString()
+            var flag=1
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "please fill all required fields", Toast.LENGTH_SHORT).show()
             } else {
@@ -48,9 +49,12 @@ class MainActivity : AppCompatActivity() {
                                 Log.v("3", "onResponse ${response.body().toString()}")
                                 token= response.body()?.token
                                 startChoices()
+                                flag=0
                             } else {
                                 Log.v("4", "onResponse ${response.code()}")
                             }
+
+
                         }
 
                         override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
